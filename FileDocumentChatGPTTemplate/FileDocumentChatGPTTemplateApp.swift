@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 @main
-struct FileDocumentChatGPTTemplateApp: App {
+struct MyApp: App {
     var body: some Scene {
         DocumentGroup(newDocument: TextFile()) { file in
             ContentView(document: file.$document)
-                .onAppear {
-                    print("DocumentGroup content view appeared")
-                }
+//                .onAppear {
+//                    print("DocumentGroup content view appeared")
+//                }
         }
     }
 }
