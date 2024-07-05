@@ -10,8 +10,11 @@ import SwiftUI
 @main
 struct FileDocumentChatGPTTemplateApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        DocumentGroup(newDocument: TextFile()) { file in
+            ContentView(document: file.$document)
+                .onAppear {
+                    print("DocumentGroup content view appeared")
+                }
         }
     }
 }
