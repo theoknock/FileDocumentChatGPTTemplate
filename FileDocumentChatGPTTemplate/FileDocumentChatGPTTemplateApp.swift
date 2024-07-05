@@ -12,10 +12,14 @@ import UniformTypeIdentifiers
 struct MyApp: App {
     var body: some Scene {
         DocumentGroup(newDocument: TextFile()) { file in
-            ContentView(document: file.$document)
-//                .onAppear {
-//                    print("DocumentGroup content view appeared")
-//                }
+            DocumentLaunchView(document: file.$document)
+//            ContentView(document: file.$document)
+            //                .onAppear {
+            //                    print("DocumentGroup content view appeared")
+            //                }
+        }
+        DocumentGroupLaunchScene {
+            NewDocumentButton("Start Dictation")
         }
     }
 }

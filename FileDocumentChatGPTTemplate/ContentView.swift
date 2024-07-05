@@ -26,6 +26,21 @@ struct TextFile: FileDocument {
     }
 }
 
+struct DocumentLaunchView: View {
+    @Binding var document: TextFile
+    
+    var body: some View {
+        VStack {
+            Button(action: {
+                // Button action goes here
+            }) {
+                Text("Do Something")
+            }
+            ContentView(document: $document)
+        }
+    }
+}
+
 struct ContentView: View {
     @Binding var document: TextFile
     
